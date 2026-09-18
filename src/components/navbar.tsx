@@ -19,7 +19,7 @@ export function Navbar() {
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex flex-col leading-none">
           <span className="font-headline text-lg font-bold tracking-tight">Techicious</span>
-          <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-primary">
+          <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-primary">
             Education
           </span>
         </Link>

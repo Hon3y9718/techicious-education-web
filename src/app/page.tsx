@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, Layers, Target, Trophy } from 'lucide-react';
+import { Layers, Target, Trophy } from 'lucide-react';
 import { TrackCard } from '@/components/track-card';
 import { SectionHeading } from '@/components/section-heading';
 import { Chip } from '@/components/chip';
@@ -33,7 +33,6 @@ export default function HomePage() {
               className="inline-flex items-center gap-2 rounded-md border border-border px-5 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-secondary"
             >
               Explore Applied AI Engineering
-              <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
 

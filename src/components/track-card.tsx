@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
 import { Chip } from '@/components/chip';
 import { MilestoneLadder, type Milestone } from '@/components/milestone-ladder';
 
@@ -25,20 +24,20 @@ export function TrackCard({
   milestones: Milestone[];
 }) {
   return (
-    <div className="flex flex-col gap-6 rounded-xl border border-border bg-card p-8">
+    <div className="flex flex-col gap-6 rounded-lg border border-border bg-card p-8">
       <div className="flex flex-col gap-1">
-        <span className="text-sm text-muted-foreground">Track {trackNumber}</span>
+        <span className="font-mono text-sm text-muted-foreground">Track {trackNumber}</span>
         <h3 className="font-headline text-2xl font-bold tracking-tight">{name}</h3>
         <p className="text-sm text-muted-foreground">{tagline}</p>
       </div>
 
       <div className="grid grid-cols-2 gap-4 border-y border-border py-5">
         <div>
-          <div className="text-lg font-bold">{duration}</div>
+          <div className="font-mono text-lg font-semibold">{duration}</div>
           <div className="text-xs text-muted-foreground">Job-Ready + Mastery</div>
         </div>
         <div>
-          <div className="text-lg font-bold">{commitment}</div>
+          <div className="font-mono text-lg font-semibold">{commitment}</div>
           <div className="text-xs text-muted-foreground">per week</div>
         </div>
       </div>
@@ -58,10 +57,9 @@ export function TrackCard({
 
       <Link
         href={href}
-        className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
+        className="mt-2 inline-flex items-center text-sm font-semibold text-primary underline-offset-4 hover:underline"
       >
         View full curriculum
-        <ArrowRight className="h-4 w-4" />
       </Link>
     </div>
   );

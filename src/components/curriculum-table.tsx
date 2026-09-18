@@ -23,7 +23,7 @@ export function CurriculumTable({
             {columns.map((col) => (
               <th
                 key={col.key}
-                className={`px-4 py-3 text-left text-xs font-semibold uppercase tracking-wide text-muted-foreground ${col.widthClassName ?? ''}`}
+                className={`px-4 py-3 text-left font-mono text-xs uppercase tracking-wide text-muted-foreground ${col.widthClassName ?? ''}`}
               >
                 {col.label}
               </th>

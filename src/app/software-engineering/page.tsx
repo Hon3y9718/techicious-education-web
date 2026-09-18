@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 function monthLabel(month: string, title: string) {
   return (
     <span className="flex flex-col gap-0.5">
-      <span className="text-xs text-muted-foreground">{month}</span>
+      <span className="font-mono text-xs text-primary">{month}</span>
       <span className="font-semibold text-foreground">{title}</span>
     </span>
   );
@@ -309,7 +309,7 @@ export default function SoftwareEngineeringPage() {
 function Fact({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex flex-col gap-1">
-      <span className="font-headline text-lg font-bold sm:text-xl">{value}</span>
+      <span className="font-mono text-lg font-semibold sm:text-xl">{value}</span>
       <span className="text-sm text-muted-foreground">{label}</span>
     </div>
   );

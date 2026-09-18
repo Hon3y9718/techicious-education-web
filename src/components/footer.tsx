@@ -9,7 +9,7 @@ export function Footer() {
         <div className="flex flex-col gap-3">
           <div className="flex flex-col leading-none">
             <span className="font-headline text-lg font-bold tracking-tight">Techicious</span>
-            <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-primary">
+            <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-primary">
               Education
             </span>
           </div>
@@ -20,7 +20,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col gap-3">
-          <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+          <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
             Tracks
           </span>
           <Link href="/software-engineering" className="text-sm text-foreground/80 hover:text-foreground">
@@ -32,7 +32,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col gap-3">
-          <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+          <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
             Get in touch
           </span>
           <p className="text-sm text-foreground/80">
