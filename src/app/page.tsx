@@ -3,6 +3,7 @@ import { ArrowRight, Layers, Target, Trophy } from 'lucide-react';
 import { TrackCard } from '@/components/track-card';
 import { SectionHeading } from '@/components/section-heading';
 import { Chip } from '@/components/chip';
+import { whatsappHref } from '@/lib/contact';
 
 export default function HomePage() {
   return (
@@ -166,7 +167,9 @@ export default function HomePage() {
             </p>
           </div>
           <Link
-            href="/#contact"
+            href={whatsappHref("Hi! I'd like to know more about Techicious Education.")}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex shrink-0 items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
           >
             Get in touch

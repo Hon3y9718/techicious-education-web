@@ -5,7 +5,7 @@ import { SectionHeading } from '@/components/section-heading';
 import { Chip } from '@/components/chip';
 import { MilestoneLadder } from '@/components/milestone-ladder';
 import { CurriculumTable, type CurriculumColumn, type CurriculumRow } from '@/components/curriculum-table';
-import { CONTACT } from '@/lib/contact';
+import { CONTACT, whatsappHref } from '@/lib/contact';
 
 export const metadata: Metadata = {
   title: 'Software Engineering Track | Techicious Education',
@@ -295,7 +295,9 @@ export default function SoftwareEngineeringPage() {
             </p>
           </div>
           <Link
-            href="/#contact"
+            href={whatsappHref("Hi! I have a question about the Software Engineering track.")}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex shrink-0 items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
           >
             Get in touch

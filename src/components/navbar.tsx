@@ -1,12 +1,16 @@
 import Link from 'next/link';
 import { ThemeToggle } from '@/components/theme-toggle';
-import { CONTACT } from '@/lib/contact';
+import { CONTACT, whatsappHref } from '@/lib/contact';
 
 const links = [
   { href: '/#about', label: 'About' },
   { href: '/software-engineering', label: 'Software Engineering' },
   { href: '/applied-ai-engineering', label: 'Applied AI Engineering' },
-  { href: '/#contact', label: 'Contact' },
+  {
+    href: whatsappHref("Hi! I'd like to know more about Techicious Education."),
+    label: 'Contact',
+    external: true,
+  },
 ];
 
 export function Navbar() {
@@ -25,6 +29,8 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
+              target={link.external ? '_blank' : undefined}
+              rel={link.external ? 'noopener noreferrer' : undefined}
               className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               {link.label}
@@ -50,6 +56,8 @@ export function Navbar() {
           <Link
             key={link.href}
             href={link.href}
+            target={link.external ? '_blank' : undefined}
+            rel={link.external ? 'noopener noreferrer' : undefined}
             className="whitespace-nowrap text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             {link.label}
