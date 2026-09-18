@@ -5,7 +5,7 @@ import { CONTACT, whatsappHref } from '@/lib/contact';
 export function Footer() {
   return (
     <footer id="contact" className="border-t border-border bg-secondary/40">
-      <div className="container grid gap-10 py-16 md:grid-cols-[1.3fr_1fr_1fr]">
+      <div className="container grid gap-10 py-16 md:grid-cols-[1.3fr_1fr_1fr_1fr]">
         <div className="flex flex-col gap-3">
           <div className="flex flex-col leading-none">
             <span className="font-headline text-lg font-bold tracking-tight">Techicious</span>
@@ -17,6 +17,22 @@ export function Footer() {
             Techicious builds software for a living. These tracks teach the same process we use
             to ship — on a real flagship build, not a classroom simulation.
           </p>
+          <Link
+            href={whatsappHref("Hi! I'd like to know more about Techicious Education.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-1 inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+          >
+            <MessageCircle className="h-4 w-4" />
+            {CONTACT.whatsappDisplay}
+          </Link>
+          <Link
+            href={`mailto:${CONTACT.email}`}
+            className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+          >
+            <Mail className="h-4 w-4" />
+            {CONTACT.email}
+          </Link>
         </div>
 
         <div className="flex flex-col gap-3">
@@ -33,27 +49,22 @@ export function Footer() {
 
         <div className="flex flex-col gap-3">
           <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
-            Get in touch
+            Team
           </span>
-          <p className="text-sm text-foreground/80">
-            Interested in a cohort? Reach out and we&apos;ll walk you through prerequisites,
-            schedule, and enrollment.
-          </p>
-          <Link
-            href={whatsappHref("Hi! I'd like to know more about Techicious Education.")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
-          >
-            <MessageCircle className="h-4 w-4" />
-            {CONTACT.whatsappDisplay}
+          <Link href="/teach-with-us" className="text-sm text-foreground/80 hover:text-foreground">
+            Teach with Us
           </Link>
-          <Link
-            href={`mailto:${CONTACT.email}`}
-            className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
-          >
-            <Mail className="h-4 w-4" />
-            {CONTACT.email}
+        </div>
+
+        <div className="flex flex-col gap-3">
+          <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
+            Legal
+          </span>
+          <Link href="/privacy-policy" className="text-sm text-foreground/80 hover:text-foreground">
+            Privacy Policy
+          </Link>
+          <Link href="/terms-and-conditions" className="text-sm text-foreground/80 hover:text-foreground">
+            Terms & Conditions
           </Link>
         </div>
       </div>
