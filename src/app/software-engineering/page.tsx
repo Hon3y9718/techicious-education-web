@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
 import { SectionHeading } from '@/components/section-heading';
 import { Chip } from '@/components/chip';
 import { MilestoneLadder } from '@/components/milestone-ladder';
@@ -12,6 +11,15 @@ export const metadata: Metadata = {
   description:
     'Zero to Software Engineer — a 6-month job-ready program with an optional 12-month Mastery extension, built around one flagship LMS application.',
 };
+
+function monthLabel(month: string, title: string) {
+  return (
+    <span className="flex flex-col gap-0.5">
+      <span className="text-xs text-muted-foreground">{month}</span>
+      <span className="font-semibold text-foreground">{title}</span>
+    </span>
+  );
+}
 
 const phaseColumns: CurriculumColumn[] = [
   { key: 'month', label: 'Month', widthClassName: 'w-40' },
@@ -30,88 +38,88 @@ const challengeColumns: CurriculumColumn[] = [
 
 const phase1a: CurriculumRow[] = [
   {
-    month: 'M1 — Fundamentals',
+    month: monthLabel('Month 1', 'Fundamentals'),
     core: 'Variables, loops, functions, arrays, objects, problem-solving, Git.',
-    refinements: 'Reading error stack traces, console debugging workflow, VS Code debugger basics — not just print-debugging.',
+    refinements: 'Reading error stack traces, console debugging workflow, VS Code debugger basics, not just print-debugging.',
     projects: 'Calculator, Quiz App, Student Management System, Expense Tracker.',
     milestone: 'Can write and debug a small program from a blank file.',
   },
   {
-    month: 'M2 — Web Dev',
+    month: monthLabel('Month 2', 'Web Dev'),
     core: 'Semantic HTML, CSS Flexbox/Grid, DOM, Fetch API, async JS.',
     refinements: 'Accessibility basics (semantic tags, alt text, keyboard nav), Chrome DevTools network/performance tabs, a basic Lighthouse audit.',
     projects: 'Portfolio Website, E-Commerce UI, Admin Dashboard, Movie App.',
     milestone: 'Can ship a responsive, accessible static site.',
   },
   {
-    month: 'M3 — React + TS',
+    month: monthLabel('Month 3', 'React + TS'),
     core: 'Components, state, hooks, routing, Context API, TypeScript fundamentals.',
-    refinements: 'React Query / TanStack Query for server state — separates "UI state" from "server state" early, a common junior-dev confusion. Basic component testing with Vitest + React Testing Library.',
+    refinements: 'React Query / TanStack Query for server state, which separates "UI state" from "server state" early, a common junior-dev confusion. Basic component testing with Vitest + React Testing Library.',
     projects: 'LMS Frontend, E-Commerce App, Analytics Dashboard.',
-    milestone: '"I can build a professional, tested frontend application."',
+    milestone: 'Can build a professional, tested frontend application.',
   },
 ];
 
 const phase1b: CurriculumRow[] = [
   {
-    month: 'M4 — Node.js',
+    month: monthLabel('Month 4', 'Node.js'),
     core: 'Express, REST APIs, JWT auth, middleware, API design.',
     refinements: 'Input validation with Zod, structured logging (pino/winston), rate limiting on auth routes.',
     projects: 'Authentication API, User Management API, Course Management API.',
     milestone: 'A hardened, documented REST API.',
   },
   {
-    month: 'M5 — PostgreSQL',
+    month: monthLabel('Month 5', 'PostgreSQL'),
     core: 'SQL, joins, normalization, indexing, transactions.',
     refinements: 'Connection pooling, seed/migration tooling (Prisma or Knex), EXPLAIN ANALYZE reading practice on the LMS’s own slow queries.',
     projects: 'LMS Database, Complete LMS Backend, Progress Tracking System.',
     milestone: 'Can design a normalized schema and diagnose a slow query.',
   },
   {
-    month: 'M6 — Docker + AWS',
+    month: monthLabel('Month 6', 'Docker + AWS'),
     core: 'Docker, Docker Compose, Nginx, AWS EC2/S3/RDS/IAM, CI/CD.',
     refinements: 'Secrets management (never commit .env), a minimal GitHub Actions pipeline (lint, test, build, deploy), basic uptime/error monitoring (UptimeRobot or free-tier Sentry).',
     projects: 'Deploy the complete LMS, Dockerized Full-Stack App, Cloud Deployment Pipeline.',
-    milestone: '"I can build and deploy a complete full-stack application, and know when it’s on fire."',
+    milestone: 'Can build and deploy a complete full-stack application, and know when it’s on fire.',
   },
 ];
 
 const phase2a: CurriculumRow[] = [
   {
-    month: 'M7 — Software Engineering',
+    month: monthLabel('Month 7', 'Software Engineering'),
     core: 'Clean Code, SOLID, design patterns, refactoring, testing, code reviews.',
     refinements: 'A fixed test-coverage bar on the refactor (e.g. 70%+ on core modules) so "refactor" has a checkable definition of done.',
     challenge: 'Refactor the LMS using professional engineering practices.',
   },
   {
-    month: 'M8 — Advanced Backend',
+    month: monthLabel('Month 8', 'Advanced Backend'),
     core: 'Redis caching, rate limiting, background jobs, RabbitMQ, WebSockets, Elasticsearch.',
     refinements: 'A cache-invalidation strategy write-up (the actual hard part of caching), idempotency keys for background jobs.',
     challenge: 'Add caching, async processing, and search to the LMS.',
   },
   {
-    month: 'M9 — System Design',
+    month: monthLabel('Month 9', 'System Design'),
     core: 'Scalability, availability, load balancing, caching, replication, sharding, CAP theorem, CDN, event-driven architecture.',
-    refinements: 'A written design doc per case study, not just a diagram — forces students to argue tradeoffs, not just draw boxes.',
+    refinements: 'A written design doc per case study, not just a diagram, which forces students to argue tradeoffs rather than just draw boxes.',
     challenge: 'Design systems inspired by YouTube, Netflix, Amazon, Uber, WhatsApp.',
   },
 ];
 
 const phase2b: CurriculumRow[] = [
   {
-    month: 'M10 — High-Scale Engineering',
+    month: monthLabel('Month 10', 'High-Scale Engineering'),
     core: 'Distributed systems, microservices, API gateways, distributed caching, database scaling, fault tolerance, monitoring/logging/metrics, high availability, disaster recovery.',
-    refinements: 'Prometheus + Grafana as the concrete monitoring stack, plus a deliberate chaos test — kill a service, verify the system degrades gracefully.',
+    refinements: 'Prometheus + Grafana as the concrete monitoring stack, plus a deliberate chaos test: kill a service, verify the system degrades gracefully.',
     challenge: 'Design a platform capable of handling 1 million users.',
   },
   {
-    month: 'M11 — Team Workflow',
+    month: monthLabel('Month 11', 'Team Workflow'),
     core: 'Agile, Scrum, Jira, Git branching, PRs, code reviews, testing, bug tracking, documentation, team communication.',
-    refinements: 'Weekly peer PR review starts in practice back in Month 4; M11 formalizes it into sprint ceremonies.',
+    refinements: 'Weekly peer PR review starts in practice back in Month 4; this month formalizes it into sprint ceremonies.',
     challenge: 'Build a production-style product in teams.',
   },
   {
-    month: 'M12 — Mastery + Career',
+    month: monthLabel('Month 12', 'Mastery + Career'),
     core: 'Advanced system design, architecture discussions, performance optimization, production debugging, security, resume, GitHub portfolio, mock interviews, machine coding, behavioral interviews.',
     refinements: 'An OWASP Top 10 walkthrough against the LMS itself (SQLi, auth bypass, XSS) as the security module’s hands-on project, not just a lecture.',
     challenge: 'Present, defend, and explain the final system like a software engineer.',
@@ -119,12 +127,12 @@ const phase2b: CurriculumRow[] = [
 ];
 
 const whatChanged = [
-  'Testing and code review moved earlier — a light version starts Month 3 (component tests, weekly PR reviews) instead of Month 7, so it’s a habit, not a lecture.',
-  'Every month has a named toolchain, not a category — "CI/CD fundamentals" becomes "one working GitHub Actions pipeline"; "monitoring" becomes "Prometheus + Grafana."',
+  'Testing and code review moved earlier. A light version starts Month 3 (component tests, weekly PR reviews) instead of Month 7, so it becomes a habit rather than a Month 7 lecture.',
+  'Every month has a named toolchain, not a category. "CI/CD fundamentals" becomes "one working GitHub Actions pipeline"; "monitoring" becomes "Prometheus + Grafana."',
   'System design case studies now require a written design doc, not just a whiteboard diagram, so the skill transfers directly to interview performance.',
-  'Security gets a hands-on project — OWASP Top 10 against the students’ own LMS — instead of living only in the Month 12 topic list.',
+  'Security gets a hands-on project: OWASP Top 10 against the students’ own LMS, instead of living only in the Month 12 topic list.',
   'One flagship project (the LMS) threads the entire 12 months instead of a fresh capstone in Month 12.',
-  'Weekly rhythm added inside each month (build, independent build, review) so pacing is explicit rather than left to the instructor.',
+  'A weekly rhythm was added inside each month (build, independent build, review) so pacing is explicit rather than left to the instructor.',
 ];
 
 export default function SoftwareEngineeringPage() {
@@ -132,9 +140,7 @@ export default function SoftwareEngineeringPage() {
     <>
       <section className="border-b border-border bg-grid">
         <div className="container flex flex-col gap-6 py-16 sm:py-20">
-          <span className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
-            Track 01 · Software Engineering
-          </span>
+          <span className="text-sm text-muted-foreground">Track 01</span>
           <h1 className="max-w-3xl text-balance font-headline text-4xl font-bold tracking-tight sm:text-5xl">
             Zero to Software Engineer
           </h1>
@@ -167,13 +173,12 @@ export default function SoftwareEngineeringPage() {
             className="mt-2 inline-flex w-fit items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
           >
             Apply for this track
-            <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
       <section className="container py-16">
-        <SectionHeading eyebrow="Who it's for" title="Prerequisites" />
+        <SectionHeading title="Prerequisites" />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <PrereqCard title="Hardware" body="Laptop, 8GB+ RAM, stable internet." />
           <PrereqCard title="Math" body="Basic logic and arithmetic only." />
@@ -188,7 +193,7 @@ export default function SoftwareEngineeringPage() {
 
       <section className="border-y border-border bg-secondary/30">
         <div className="container py-16">
-          <SectionHeading eyebrow="The path" title="Milestone ladder" />
+          <SectionHeading title="Milestone ladder" />
           <MilestoneLadder
             milestones={[
               { mark: 'M3', label: 'Frontend Developer' },
@@ -202,9 +207,8 @@ export default function SoftwareEngineeringPage() {
 
       <section className="container py-16">
         <SectionHeading
-          eyebrow="Phase 1a · Months 1–3"
           title="Frontend Mastery"
-          dek="Goal: zero to React developer."
+          dek="Months 1 through 3. The goal is to take you from zero to React developer."
         />
         <CurriculumTable columns={phaseColumns} rows={phase1a} />
         <p className="mt-4 text-sm text-muted-foreground">
@@ -217,9 +221,8 @@ export default function SoftwareEngineeringPage() {
 
       <section className="container pb-16">
         <SectionHeading
-          eyebrow="Phase 1b · Months 4–6"
           title="Backend & Production"
-          dek="Goal: React developer to production developer."
+          dek="Months 4 through 6. The goal is to take you from React developer to production developer."
         />
         <CurriculumTable columns={phaseColumns} rows={phase1b} />
         <p className="mt-4 text-sm text-muted-foreground">
@@ -232,9 +235,8 @@ export default function SoftwareEngineeringPage() {
       <section className="border-y border-border bg-secondary/30">
         <div className="container py-16">
           <SectionHeading
-            eyebrow="Phase 2a · Months 7–9"
             title="System Thinking"
-            dek="Goal: application developer to system designer."
+            dek="Months 7 through 9. The goal is to take you from application developer to system designer."
           />
           <CurriculumTable columns={challengeColumns} rows={phase2a} />
           <p className="mt-4 text-sm text-muted-foreground">
@@ -247,9 +249,8 @@ export default function SoftwareEngineeringPage() {
 
       <section className="container py-16">
         <SectionHeading
-          eyebrow="Phase 2b · Months 10–12"
           title="High-Scale & Career"
-          dek="Goal: mastery and career readiness."
+          dek="Months 10 through 12. This is where mastery and career readiness come together."
         />
         <CurriculumTable columns={challengeColumns} rows={phase2b} />
         <p className="mt-4 text-sm text-muted-foreground">
@@ -262,10 +263,7 @@ export default function SoftwareEngineeringPage() {
 
       <section className="border-t border-border bg-secondary/30">
         <div className="container py-16">
-          <SectionHeading
-            eyebrow="Refined from the original brochure"
-            title="What changed, and why"
-          />
+          <SectionHeading title="What changed from the original brochure, and why" />
           <ul className="grid gap-4 sm:grid-cols-2">
             {whatChanged.map((item) => (
               <li
@@ -301,7 +299,6 @@ export default function SoftwareEngineeringPage() {
             className="inline-flex shrink-0 items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
           >
             Get in touch
-            <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
@@ -313,7 +310,7 @@ function Fact({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex flex-col gap-1">
       <span className="font-headline text-lg font-bold sm:text-xl">{value}</span>
-      <span className="text-xs uppercase tracking-wide text-muted-foreground">{label}</span>
+      <span className="text-sm text-muted-foreground">{label}</span>
     </div>
   );
 }
@@ -321,9 +318,7 @@ function Fact({ label, value }: { label: string; value: string }) {
 function PrereqCard({ title, body }: { title: string; body: string }) {
   return (
     <div className="rounded-lg border border-border bg-card p-5">
-      <div className="mb-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-        {title}
-      </div>
+      <div className="mb-1 text-sm font-semibold text-foreground">{title}</div>
       <p className="text-sm text-foreground/90">{body}</p>
     </div>
   );

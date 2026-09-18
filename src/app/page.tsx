@@ -11,9 +11,7 @@ export default function HomePage() {
       {/* Hero */}
       <section className="border-b border-border bg-grid">
         <div className="container flex flex-col items-start gap-6 py-20 sm:py-28">
-          <span className="text-xs font-semibold uppercase tracking-[0.14em] text-primary">
-            From Techicious, a software company
-          </span>
+          <span className="text-sm text-muted-foreground">From Techicious, a software company</span>
           <h1 className="max-w-3xl text-balance font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
             We build software for a living. Now we&apos;ll teach you how.
           </h1>
@@ -29,7 +27,6 @@ export default function HomePage() {
               className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
             >
               Explore Software Engineering
-              <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
               href="/applied-ai-engineering"
@@ -52,7 +49,6 @@ export default function HomePage() {
       <section id="about" className="container py-20">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr] lg:items-start">
           <SectionHeading
-            eyebrow="Why learn from us"
             title="We're not a school that added a coding course"
             className="mb-0 max-w-none"
           />
@@ -74,7 +70,6 @@ export default function HomePage() {
       {/* Tracks */}
       <section className="container pb-20">
         <SectionHeading
-          eyebrow="Open now"
           title="Two tracks, open for enrollment"
           dek="Start from zero with Software Engineering, or move straight into Applied AI Engineering if you already have backend fundamentals. Additional tracks are in development."
         />
@@ -83,7 +78,7 @@ export default function HomePage() {
             trackNumber="01"
             href="/software-engineering"
             name="Software Engineering"
-            tagline="Zero to Software Engineer · 6-month Job-Ready track, 12-month Mastery option"
+            tagline="Zero to Software Engineer. 6-month job-ready track, with a 12-month Mastery option."
             duration="6–12 mo"
             commitment="20–25 hrs"
             flagship="Build one flagship LMS — from a to-do app to a deployed, cached, search-enabled, horizontally-scalable platform."
@@ -99,7 +94,7 @@ export default function HomePage() {
             trackNumber="02"
             href="/applied-ai-engineering"
             name="Applied AI Engineering"
-            tagline="Applied AI Engineer · 6-month Job-Ready track, 3-month Mastery extension"
+            tagline="Applied AI Engineer. 6-month job-ready track, with a 3-month Mastery extension."
             duration="6–9 mo"
             commitment="20–25 hrs"
             flagship="Grow one AI assistant — from a single prompt call to a multi-agent, evaluated, guardrailed, production-deployed system."
@@ -122,7 +117,6 @@ export default function HomePage() {
       <section className="border-y border-border bg-secondary/30">
         <div className="container py-20">
           <SectionHeading
-            eyebrow="Our approach"
             title="Depth over breadth, proof over demos"
             dek="The same principles we use to ship client work, built into how we teach."
           />
@@ -139,16 +133,16 @@ export default function HomePage() {
               <Target className="h-6 w-6 text-primary" />
               <h3 className="font-headline text-lg font-bold">Milestone checkpoints</h3>
               <p className="text-sm text-muted-foreground">
-                A named milestone ladder (e.g. Frontend Developer → Full-Stack Developer → System
-                Designer) marks concrete, job-ready checkpoints instead of vague progress.
+                A named milestone ladder (Frontend Developer, then Full-Stack Developer, then
+                System Designer) marks concrete, job-ready checkpoints instead of vague progress.
               </p>
             </div>
             <div className="flex flex-col gap-3 rounded-xl border border-border bg-card p-6">
               <Trophy className="h-6 w-6 text-primary" />
-              <h3 className="font-headline text-lg font-bold">Present &amp; defend</h3>
+              <h3 className="font-headline text-lg font-bold">Present and defend</h3>
               <p className="text-sm text-muted-foreground">
                 Capstones are argued with evidence — a design doc, an eval scorecard, a security
-                review — not just demoed. &quot;Prove it works with numbers, not vibes.&quot;
+                review — not just demoed. Prove it works with numbers, not vibes.
               </p>
             </div>
           </div>
@@ -173,7 +167,6 @@ export default function HomePage() {
             className="inline-flex shrink-0 items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
           >
             Get in touch
-            <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>

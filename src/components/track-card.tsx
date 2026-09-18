@@ -27,9 +27,7 @@ export function TrackCard({
   return (
     <div className="flex flex-col gap-6 rounded-xl border border-border bg-card p-8">
       <div className="flex flex-col gap-1">
-        <span className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-          Track {trackNumber}
-        </span>
+        <span className="text-sm text-muted-foreground">Track {trackNumber}</span>
         <h3 className="font-headline text-2xl font-bold tracking-tight">{name}</h3>
         <p className="text-sm text-muted-foreground">{tagline}</p>
       </div>
@@ -54,9 +52,7 @@ export function TrackCard({
       </div>
 
       <div>
-        <div className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-          Milestone ladder
-        </div>
+        <div className="mb-3 text-sm text-muted-foreground">Milestone ladder</div>
         <MilestoneLadder milestones={milestones} />
       </div>
 
