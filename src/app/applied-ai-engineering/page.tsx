@@ -219,7 +219,7 @@ const evalDeepDive = [
 export default function AppliedAiEngineeringPage() {
   return (
     <>
-      <section className="border-b border-border bg-grid">
+      <section className="border-b border-border">
         <div className="container flex flex-col gap-6 py-16 sm:py-20">
           <span className="text-sm text-muted-foreground">Track 02</span>
           <h1 className="max-w-3xl text-balance font-headline text-4xl font-bold tracking-tight sm:text-5xl">

@@ -9,7 +9,7 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="border-b border-border bg-grid">
+      <section className="border-b border-border">
         <div className="container flex flex-col items-start gap-6 py-20 sm:py-28">
           <span className="text-sm text-muted-foreground">From Techicious, a software company</span>
           <h1 className="max-w-3xl text-balance font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
