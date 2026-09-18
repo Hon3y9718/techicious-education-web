@@ -1,0 +1,61 @@
+import Link from 'next/link';
+import { ThemeToggle } from '@/components/theme-toggle';
+import { CONTACT } from '@/lib/contact';
+
+const links = [
+  { href: '/#about', label: 'About' },
+  { href: '/software-engineering', label: 'Software Engineering' },
+  { href: '/applied-ai-engineering', label: 'Applied AI Engineering' },
+  { href: '/#contact', label: 'Contact' },
+];
+
+export function Navbar() {
+  return (
+    <header className="sticky top-0 z-40 border-b border-border bg-background/70 backdrop-blur-md">
+      <div className="container flex h-16 items-center justify-between">
+        <Link href="/" className="flex flex-col leading-none">
+          <span className="font-headline text-lg font-bold tracking-tight">Techicious</span>
+          <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-primary">
+            Education
+          </span>
+        </Link>
+
+        <nav className="hidden items-center gap-8 md:flex">
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="flex items-center gap-3">
+          <Link
+            href={CONTACT.applicationFormUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 sm:inline-flex"
+          >
+            Apply Now
+          </Link>
+          <ThemeToggle />
+        </div>
+      </div>
+
+      <nav className="container flex items-center gap-6 overflow-x-auto pb-3 md:hidden">
+        {links.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className="whitespace-nowrap text-sm text-muted-foreground transition-colors hover:text-foreground"
+          >
+            {link.label}
+          </Link>
+        ))}
+      </nav>
+    </header>
+  );
+}
